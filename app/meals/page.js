@@ -1,16 +1,23 @@
 import Link from 'next/link'
 import React from 'react'
-
-export default function MealPage() {
+import classes from "./page.module.css"
+import MealsGrid from '../components/meals/meals-grid'
+import { getMeals } from '@/lib/meals'
+export default async function MealPage() {
+   const meals=await getMeals();
   return (
-    <main>
-      <h1>This is Meal Pages</h1>
-      <Link href={"/meals/share"}>go to share page</Link>
+   <>
+   <header className={classes.header}>
+    <h1>Delicous meals, created <span className={classes.highlight}>by you</span></h1>
+    <p>Choose your favorite receipe and cook it yourself. It is easy and fun !</p>
+    <p className={classes.cta}>
+      <Link href={"meals/share"}>Share Your Favorite Receipe</Link>
 
-      <Link href={"meals/Meal_1"}>Meal 1</Link>
-      <Link href={"meals/Meal_2"}>Meal 2</Link>
-      <Link href={"meals/meal_3"}>Meal 3</Link>
-
-    </main>
+    </p>
+   </header>
+   <main className={classes.main}>
+    <MealsGrid meals={meals}></MealsGrid>
+   </main>
+   </>
   )
 }
