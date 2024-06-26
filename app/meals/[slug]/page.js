@@ -11,11 +11,13 @@ export default function MealDetail({params}) {
     notFound();
   }
   meal.instructions=meal.instructions.replace(/\n/g,"<br/>")
+  console.log(meal)
   return (
  <>
  <header className={classes.header}>
   <div className={classes.image}>
-    <Image src={meal.image} alt={meal.title} fill ></Image>
+    <Image src={`https://bucketofdophatdat.s3.ap-southeast-2.amazonaws.com/${meal.image}`} alt={meal.title} fill ></Image>
+   
   </div>
   <div className={classes.headerText}>
     <h1>{meal.title}</h1>

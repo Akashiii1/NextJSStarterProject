@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import burgerImg from '../../assets/burger.jpg';
+import burgerImga from '../../assets/burger.jpg';
 import curryImg from '../../assets/curry.jpg';
 import dumplingsImg from '../../assets/dumplings.jpg';
 import macncheeseImg from '../../assets/macncheese.jpg';
@@ -12,7 +12,7 @@ import tomatoSaladImg from '../../assets/tomato-salad.jpg';
 import classes from './images-slideshow.module.css';
 
 const images = [
-  { image: burgerImg, alt: 'A delicious, juicy burger' },
+  { image: burgerImga, alt: 'A delicious, juicy burger' },
   { image: curryImg, alt: 'A delicious, spicy curry' },
   { image: dumplingsImg, alt: 'Steamed dumplings' },
   { image: macncheeseImg, alt: 'Mac and cheese' },
